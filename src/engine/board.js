@@ -44,7 +44,7 @@ export default class Board {
         }
     }
     isValidSquare(row, column) {
-        if (row >= 0 && row < 8 && column >=0 && column < 8) return true;
+        if (row >= 0 && row < GameSettings.BOARD_SIZE && column >=0 && column < GameSettings.BOARD_SIZE) return true;
         return false;
     }
 }
