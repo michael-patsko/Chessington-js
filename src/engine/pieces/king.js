@@ -14,7 +14,6 @@ export default class King extends Piece {
                 if(i != 0 || j != 0 && board.isValidSquare(location.row + i, location.col + j)) newMoves.push(Square.at(location.row + i, location.col + j));
             }
         }
-        console.log(newMoves);
         return newMoves;
     }
 }

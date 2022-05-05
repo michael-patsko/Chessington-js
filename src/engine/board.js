@@ -47,4 +47,20 @@ export default class Board {
         if (row >= 0 && row < GameSettings.BOARD_SIZE && column >=0 && column < GameSettings.BOARD_SIZE) return true;
         return false;
     }
+    validMove(row, column) {
+        let newSquare = Square.at(row, column);
+        const pieceInSquare = this.getPiece(newSquare);
+        if (this.currentPlayer === Player.WHITE) {
+            if (this.isValidSquare(row, column) && pieceInSquare === undefined || pieceInSquare.player === Player.BLACK) {
+                return true
+             }
+             return false
+        }
+        if (this.currentPlayer === Player.BLACK) {
+            if (this.isValidSquare(row, column) && pieceInSquare === undefined || pieceInSquare.player === Player.WHITE) {
+                return true
+            }
+            return false
+        }
+    }
 }
