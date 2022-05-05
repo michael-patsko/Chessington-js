@@ -43,4 +43,8 @@ export default class Board {
             this.currentPlayer = (this.currentPlayer === Player.WHITE ? Player.BLACK : Player.WHITE);
         }
     }
+    isValidSquare(row, column) {
+        if (row >= 0 && row < 8 && column >=0 && column < 8) return true;
+        return false;
+    }
 }
